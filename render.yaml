@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: grading-app-backend
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r back/requirements.txt
+    startCommand: python back/main.py
+    envVars:
+      - key: PORT
+        value: 10000

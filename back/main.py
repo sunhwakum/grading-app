@@ -75,3 +75,9 @@ async def grade():
         r['rank'] = i + 1
 
     return {"results": results}
+import uvicorn
+import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Render가 주는 PORT 값 사용
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
